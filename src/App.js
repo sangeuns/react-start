@@ -4,7 +4,8 @@ import React, { useState } from "react";
 function App() {
   // onBtnIncreaseClick 함수를 만든다
   const onBtnIncreaseClick = () => {
-    console.log("버튼 클릭됨");
+    // setNum : num을 어떻게 활용할 것인지에 대한 상태값
+    setNum(num + 1); // -> 버튼을 누를때 마다 onBtnIncreaseClick함수 안에 있는 setNum이 실행된다
   };
   // usestate의 기본 변수 2가지 : [ num, setnum ]
   // num은 usestate(num);의 초기값 -> 현재 num값은 '0'이다, setNum은 어떻게 증가 시킬것 인지를 선언하는 변수
