@@ -12,7 +12,7 @@ function App() {
     - type : number, email, date.. 등 입력 유형을 설정
     - placeholder : 임시 힌트 텍스트
     - defaultvalue : 입력 필드의 초기값*/}
-      <input type="text" placeholder="이름을 입력해주세요" defaultvalue={0} />
+      <input type="text" placeholder="이름을 입력해주세요" defaultValue={0} />
     </>
   );
 }
