@@ -15,11 +15,20 @@ export default function SetTimeOut() {
     clearTimeout(timeoutId);
   };
 
+  // resume했을 때 setTimeout 함수가 다시 실행되게 한다
+  const resume = () => {
+    setTimeout(() => {
+      setNum(num + 1);
+    }, 1000);
+  };
+
   return (
     <>
       숫자 : {num}
       {/* 버튼을 만들어 클릭시 pause가 실행되게 한다 */}
       <button onClick={pause}> 일시정지</button>
+      {/* 버튼을 만들어 클릭시 resume이 실행되게 한다 */}
+      <button onClick={resume}> 다시시작</button>
     </>
   );
 }
