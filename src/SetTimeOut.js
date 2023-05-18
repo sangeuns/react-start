@@ -5,10 +5,21 @@ export default function SetTimeOut() {
   // useState 기본 입력 방식 :
   const [num, setNum] = useState(0);
 
-  // setTimeout 함수 적용 : setTimeout(함수, 지연시간);
-  setTimeout(() => {
+  // setTimeout 함수를 timeoutId에 값으로 넣어준다
+  const timeoutId = setTimeout(() => {
     setNum(num + 1);
   }, 1000);
 
-  return <>숫자 : {num}</>;
+  // pause했을 때 clearTimeout 실행하여 timeoutId를 멈추는 함수를 만든다
+  const pause = () => {
+    clearTimeout(timeoutId);
+  };
+
+  return (
+    <>
+      숫자 : {num}
+      {/* 버튼을 만들어 클릭시 pause가 실행되게 한다 */}
+      <button onClick={pause}> 일시정지</button>
+    </>
+  );
 }
