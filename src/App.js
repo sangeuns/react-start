@@ -5,14 +5,22 @@ function App() {
   let AppCallCount = 0;
   AppCallCount++;
   console.log(`app이 ${AppCallCount}번 실행됨`);
+  const name = "park";
+
   // return 값 안에 jsx 형식으로 제어요소를 입력한다
   return (
     <>
-      {/* {제어 요소 입력방식 : <input + 제어요소 + 제어요소... />} 
-    - type : number, email, date.. 등 입력 유형을 설정
-    - placeholder : 임시 힌트 텍스트
-    - defaultvalue : 입력 필드의 초기값*/}
-      <input type="text" placeholder="이름을 입력해주세요" defaultValue={0} />
+      {/* 비제어 입력요소 : 직접 값을 넣어주는 것이 아닌 함수나 변수를 불러와 사용하는 방식
+      - value : const의 name을 불러와 사용
+      - onchange : 입력되는 값을 실시간으로 감지 및 업데이트 하는 상태를 말한다*/}
+      <input
+        type="text"
+        placeholder="이름을 입력해주세요"
+        value={name}
+        onChange={() => {
+          console.log("변경 상태 감지");
+        }}
+      />
     </>
   );
 }
