@@ -10,15 +10,15 @@ function App() {
   // return 값 안에 jsx 형식으로 제어요소를 입력한다
   return (
     <>
-      {/* 비제어 입력요소 : 직접 값을 넣어주는 것이 아닌 함수나 변수를 불러와 사용하는 방식
-      - value : const의 name을 불러와 사용
-      - onchange : 입력되는 값을 실시간으로 감지 및 업데이트 하는 상태를 말한다*/}
+      {/* e란? 
+      - 발생하는 모든 이벤트, 사건을 말한다 -> 어디에 클릭했는지, 어떤 문자를 입력했는지 등등...
+      - e.target.value : 'e'를 받은 '당사자'(target -> input)의 일어났던 모든 값(value)을 뜻한다*/}
       <input
         type="text"
         placeholder="이름을 입력해주세요"
         value={name}
-        onChange={() => {
-          console.log("변경 상태 감지");
+        onChange={(e) => {
+          console.log(e.target.value);
         }}
       />
     </>
